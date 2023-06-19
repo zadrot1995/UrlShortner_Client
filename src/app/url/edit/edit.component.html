@@ -1,0 +1,50 @@
+<div class="container">
+<div class="row">
+  <div class="input-field col s6">
+    <input [(ngModel)]="university.name" id="first_name" type="text" class="validate" name="name">
+    <label for="first_name">Name</label>
+  </div>
+
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea style="height: 200px" name="about" [(ngModel)]="university.about" id="textarea1" class="materialize-textarea">{{university.about}}</textarea>
+          <label for="textarea1">About</label>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+  <div *ngFor="let institute of university.institutes">
+    <div>
+      <a routerLink="/institutes/edit/{{institute.id}}">
+        <h4>{{institute.name}}</h4>
+      </a>
+    </div>
+  </div>
+  <div>
+    <a routerLink="/institutes/add/{{university.id}}">Add</a>
+  </div>
+
+<div *ngIf="!loading" class="row">
+  <div class="col-3" *ngFor="let image of university.imageContents">
+      <div>
+        <img style="margin-top: 20px" class="universityIcon" src="https://localhost:44304/api/universities/image/{{image.imageName}}">
+      </div>
+    <button (click)="deleteImage(image.id)" class="btn waves-effect waves-light  red darken-4" type="submit" name="action">Remove
+      <i class="material-icons right">send</i>
+    </button>
+  </div>
+</div>
+
+<div>
+  <input type="file" (change)="onFileSelected($event)">
+</div>
+<div class="row">
+  <button (click)="editUniversity()">
+    Add
+  </button>
+</div>
+</div>

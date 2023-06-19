@@ -1,0 +1,34 @@
+<div class="container" style="margin-bottom:100px;" >
+  <div class="row" style="margin-top: 30px">
+    <div class="col-12">
+      <div class="d-flex justify-content-center textStyledHeader" >
+        <h1>Sign up</h1>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-left: 100px; margin-right: 100px">
+    <div class="row">
+      <div class="col-12">
+        <input [(ngModel)]="userName" placeholder="Login" type="text" class="textInput validate" name="login">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <input [(ngModel)]="password" placeholder="password" type="password" class="textInput validate" name="password">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <input [(ngModel)]="confirmPassword" placeholder="password" type="password" class="textInput validate" name="password">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="waves-effect waves-light btn red darken-4"(click)="login()">
+          Register
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

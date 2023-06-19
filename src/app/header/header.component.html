@@ -1,0 +1,13 @@
+<nav class="#b71c1c teal darken-2">
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Url Shortner</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="https://localhost:7039/">MVC App</a></li>
+      <li><a routerLink="urls">URLs</a></li>
+      <li *ngIf="tokenStorageService.getUser() == null"><a routerLink="login">Sing in</a></li>
+      <li *ngIf="tokenStorageService.getUser() == null"><a routerLink="register">Sing up</a></li>
+      <li *ngIf="tokenStorageService.getUser() != null"><a>User - {{tokenStorageService.getUser().login}}</a></li>
+      <li *ngIf="tokenStorageService.getUser() != null"><a (click)="logOut()">Log out</a></li>
+    </ul>
+  </div>
+</nav>
